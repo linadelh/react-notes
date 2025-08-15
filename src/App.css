@@ -1,0 +1,75 @@
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.header {
+  background-color: rgb(33, 112, 116);
+  margin: 0;
+  padding: 20px ;
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  color: white;
+  font-weight: 700;
+  box-shadow: (10px, 5px , 5px , rgb(34, 51, 52))
+}
+
+.leftsection {
+  
+  width: 100%;
+  display: block;
+  justify-content: center;
+  padding: 5px;
+  margin: 20px;
+  margin-left: 260px;
+  text-align: center;
+  border: 5px solid  rgb(33, 112, 116);
+  
+
+}
+
+.sections {
+  display: flex ;
+  justify-content: space-between;
+
+}
+
+.rightsection {
+  border: 5px solid rgb(33, 112, 116);
+  width: 20%;
+  margin: 20px 150px;
+  margin-left: 100px;
+  height: fit-content;
+  display: flex ;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px;
+  justify-content: center;
+}
+
+
+
+.btn {
+  width:fit-content;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid grey ;
+  background-color: rgb(55, 33, 77);
+  color: white ;
+  font-weight: 400;
+  margin: 10px;
+  transition: 0.7s;
+  box-shadow: 1px  1px 5px  black;
+}
+
+.btn:hover {
+  background-color:  rgb(24, 6, 41); 
+  transform: scale(1.1);
+}
