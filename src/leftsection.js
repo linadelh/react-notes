@@ -1,12 +1,12 @@
 
 
 
-export default function leftsection (){
+export default function leftsection ({content , title ="no title"}){
   return (
   <div className={"leftsection"}>
-    <h2>This is the post Title</h2>
+    <h2>{title}</h2>
     <hr/>
-    <p>This is the post body</p>
-  </div>
+    <p>{content}</p>
+  </div> 
   ) 
 }
