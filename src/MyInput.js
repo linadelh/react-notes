@@ -1,19 +1,23 @@
-import { useState } from "react";
-export default function MyInput(){
 
 
-   const [Inputvalue , setInputvalue] = useState('');
-    function handleinput (e){
-        setInputvalue(e.target.value);
-    }
+import { useState } from "react" 
+
+
+export default function MyInput (){
+    const [input , setinput] = useState("");
+    
+        function inputupload (e){
+            setinput(e.target.value);
+        }
     return (
+        
         <div>
-            <label>Your Name</label>
-            <input
-            value={Inputvalue}
-            onChange={handleinput
-            }
-            ></input>
+            <label>name</label>
+            <input placeholder="enter your name" value={input} onChange={inputupload}>
+            
+            </input>
         </div>
+
+
     )
 }
