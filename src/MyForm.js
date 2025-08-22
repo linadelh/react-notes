@@ -3,7 +3,7 @@ import { useState } from "react"
 
 export default function MyForm (){
 
-    const [Inputs , setInputs] = useState({name :"" , age :"" , email:"" })
+    const [Inputs , setInputs] = useState({name :"" , age :"" , email:"" , generalinfo:"" , isstudent : false })
     return(
         <form onSubmit={(e)=>{
             e.preventDefault();
@@ -26,6 +26,32 @@ export default function MyForm (){
             }}/> 
             <hr></hr>
 
+            <label>general info</label>
+            <textarea onChange={
+                (e)=> {
+                    setInputs({...Inputs , generalinfo : e.target.value})
+                }
+            }></textarea>
+
+            <hr></hr>
+            <label>are you a student </label>
+            <input type="checkbox" checked = {Inputs.isstudent} onChange={(e)=>{
+                if(Inputs.isstudent === false ){
+                setInputs({...Inputs , isstudent : true})
+                }else {
+                     setInputs({...Inputs , isstudent : false})
+                }
+            }}/>
+
+
+
+
+
         </form>
+
+
+
+
+        
     )
 }
