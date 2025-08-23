@@ -12,16 +12,26 @@ function App() {
   }
 
    function handledeleteclick(id) {
-    const newFruits = [...fruits];
-   let index = 0 ;
-   for( let fruit of newFruits){
-    if(fruit.id === id){
-      newFruits.splice(index , 1);
-      setfruits(newFruits);
-    }else{
-      index++; 
-    }
-   }
+    // const newFruits = [...fruits];
+    // --first method-- 
+  //  let index = 0 ;
+  //  for( let fruit of newFruits){
+  //   if(fruit.id === id){
+  //     newFruits.splice(index , 1);
+  //     setfruits(newFruits);
+  //   }else{
+  //     index++; 
+  //   }
+  //  }
+
+    // --Second method
+
+    const newFruits = 
+    fruits.filter((fruit)=>{
+      if (fruit.id === id) return false ;
+      else return true ; 
+    })
+    setfruits(newFruits);
 }
 
   const [fruitName , setFruitName] = useState(""); 
