@@ -3,64 +3,123 @@ import { useState } from 'react';
 import './App.css';
 
 
-   let nextid = 5 ; 
+let index = 5 ; 
 function App() {
+ 
 
-  function handleclick(){
-     setfruits([...fruits ,{ id : nextid , name : fruitName } ]);
-     nextid = nextid + 1 ; 
-  }
+   const [mood, setMood] = useState("normal");
+   const [indexedit, setIndexedit] = useState(0);
 
-   function handledeleteclick(id) {
-    // const newFruits = [...fruits];
-    // --first method-- 
-  //  let index = 0 ;
-  //  for( let fruit of newFruits){
-  //   if(fruit.id === id){
-  //     newFruits.splice(index , 1);
-  //     setfruits(newFruits);
-  //   }else{
-  //     index++; 
-  //   }
-  //  }
+   let [inputvalue , setInput] = useState("");
+  const [names , setnames] = useState(
+    [ 
+      {name : "lina" , id : 1},
+      {name : "nori" , id : 2},
+      {name : "yopi" , id : 3},
+      {name : "kiko" , id : 4},
+      {name : "loli" , id : 5},
+     ],
+  )
 
-    // --Second method
-
-    const newFruits = 
-    fruits.filter((fruit)=>{
-      if (fruit.id === id) return false ;
-      else return true ; 
-    })
-    setfruits(newFruits);
-}
-
-  const [fruitName , setFruitName] = useState(""); 
-  const [fruits , setfruits ] = useState(
-    [    
-      {id: 1 , name : "phone"} ,
-      {id: 2 , name : "phone1"},
-      {id: 3 , name : "phone2"},
-      {id: 4 , name : "phone3"}
-    
-    ]
-  );
-  const fruitstable = fruits.map((fruit)=>{
+   const namesList = names.map((name)=>{
     return (
-      <li key={fruit.id}>{fruit.name}<button onClick={()=>{
-        handledeleteclick(fruit.id)
-      }
-      }>Delete</button></li>
+      <li key={name.id}>{name.name}<button style={{margin:"10px"}} onClick={()=>{
+        handleclickdelete(name.id)
+      }}>delete</button><button style={{margin:"10px"}} onClick={()=>{
+        handleeditclick(name.id)
+      }}>Edit</button></li>
     )
-  })
+   })
 
-  return ( 
-    <div className="App"  style={{padding:"150px" , fontSize :"40px"}}>
-          {fruitstable}
-          <input type='text' value={fruitName} onChange={(e)=>{
-                  setFruitName(e.target.value);
-          }}/>
-          <button onClick={handleclick}>add</button>
-    </div>
-  );
+
+
+
+    //  handle the click 
+   function handleclickbutton (){
+      if(mood==="normal"){
+      index++;
+      const newnames = [...names];
+      newnames.push({name:inputvalue , id:index});
+      setnames(newnames);
+      setInput("");
+      }else{
+        
+        const update = names.map((m)=>{
+          if(m.id === indexedit){
+            return ( {...m , name : inputvalue}); 
+          }
+          return m 
+        })
+         setnames(update);
+         setMood("normal");
+         setIndexedit(0);
+      }
+   }
+
+
+
+   // handle the delete 
+   function handleclickdelete(id){
+
+           //first method 
+
+      // console.log(id);
+      // const Tableafterdelete = names.filter((name)=>{
+      //   if(name.id === id ) return false 
+      //   return true 
+      // })
+      // setnames(Tableafterdelete);
+
+      // second method 
+      let index = 0 ; 
+      const Tableafterdelete = [...names];
+      names.forEach((name)=>{
+        if(name.id === id){
+          Tableafterdelete.splice(index , 1);
+        }else {
+          index++ ; 
+        }
+      })
+      setnames(Tableafterdelete);
+   }
+
+
+  //edit 
+  
+  function handleeditclick(id){
+     names.forEach((e)=>{
+      if (e.id === id ){
+        setInput(e.name);
+        setIndexedit(id);
+        setMood("edit");
+      }else{
+        console.log("hello");
+      }
+     })
+  }
+  
+
+
+
+
+return (
+  <div style={{margin : "150px 500px" , fontFamily :"sans-serif"}}>
+    <h1 style={{marginRight:"20px" , letterSpacing : "2px"}}>LIST OF NAMES</h1> 
+    {namesList}
+   <input placeholder='enter name' value={inputvalue}  type="text" onChange={(e)=>{
+         setInput(e.target.value);
+   }}/>
+   <button onClick={handleclickbutton}>{mood === "normal" ? "ADD" : "EDIT"}</button>
+  </div>
+  
+
+
+
+
+
+
+
+
+)
 }
-export default App;
+export default App; 
