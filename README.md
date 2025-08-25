@@ -15,7 +15,7 @@ They are simple, reusable, and focus on the logic rather than the styling (CSS i
   ---
   **ps : the css is up to you choose the style you want , the most important is to get the logic behind every code and learn* 
 
-  ##why this repo :
+  ### why this repo 
   1. To serve as my personal reference whenever I forget how to implement something in React.
   2. To help new learners practice and understand the basics through simple, practical examples.
 
