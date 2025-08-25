@@ -98,12 +98,8 @@ export default function ListOfNames(){
      })
   }
   
-
-
-
-
 return (
-  <div>
+  <div style={{margin : "150px 500px" , fontFamily :"sans-serif"}}>
     <h1 style={{marginRight:"20px" , letterSpacing : "2px"}}>LIST OF NAMES</h1> 
     {namesList}
    <input placeholder='enter name' value={inputvalue}  type="text" onChange={(e)=>{
