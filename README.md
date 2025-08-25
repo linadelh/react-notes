@@ -8,7 +8,7 @@ They are simple, reusable, and focus on the logic rather than the styling (CSS i
 
 ## HOW TO USE THEM 
 - you will find all the components in the field **/src** 
-- and this is an example of how you use each composant
+- and this is an example of how you use each components
 
   <img src="exampleofusecom.png" alt="Alt text" width="300"/>
 
