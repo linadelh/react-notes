@@ -10,7 +10,7 @@ They are simple, reusable, and focus on the logic rather than the styling (CSS i
 - you will find all the components in the field **/src** 
 - and this is an example of how you use each composant
 
-  <img src="exampleofuse.png" alt="Alt text" width="300"/>
+  <img src="exampleofusecom.png" alt="Alt text" width="300"/>
 
   ---
   **ps : the css is up to you choose the style you want , the most important is to get the logic behind every code and learn* 
