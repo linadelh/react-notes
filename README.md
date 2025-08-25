@@ -6,7 +6,7 @@ They are simple, reusable, and focus on the logic rather than the styling (CSS i
 - **Counter.js** a basic counter that increases or decreases when you click the + and - buttons
 - **ListOfNames** lets you add, edit, and delete items from a list.
 
-##HOW TO USE THEM 
+## HOW TO USE THEM 
 - you will find all the components in the field **/src** 
 - and this is an example of how you use each composant
 
