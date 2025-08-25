@@ -1,4 +1,4 @@
-# React Learning Playground 
+# My React Learning Journey
 This repository is where I share small React components I built while learning.
 They are simple, reusable, and focus on the logic rather than the styling (CSS is up to you )
 
