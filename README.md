@@ -5,6 +5,7 @@ They are simple, reusable, and focus on the logic rather than the styling (CSS i
 ## Some examples of the components you will find 
 - **Counter.js** a basic counter that increases or decreases when you click the + and - buttons
 - **ListOfNames** lets you add, edit, and delete items from a list.
+- and moreee ... 
 
 ## HOW TO USE THEM 
 - you will find all the components in the field **/src** 
@@ -20,6 +21,7 @@ They are simple, reusable, and focus on the logic rather than the styling (CSS i
   2. To help new learners practice and understand the basics through simple, practical examples.
 
     
-  
+  ---
+  © 2025 Delhoum lina .
 
   
