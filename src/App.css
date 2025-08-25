@@ -96,3 +96,9 @@ button {
   font-family:Verdana, Geneva, Tahoma, sans-serif
 
 }
+
+#switch-color:hover {
+  background-color: rgb(208, 208, 208);
+  box-shadow: 5px 5px 10px grey;
+  transform: scale(1.1);
+}

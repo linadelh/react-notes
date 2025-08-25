@@ -24,7 +24,7 @@ export default function Counter(){
     const [score , setscore] = useState("0");
     let thescore = score ; 
     return (
-   <div style={{margin:"200px 100px"}}>
+   <div style={{margin:"200px 400px"}}>
     <h1 style={{marginLeft:"40px"}}>Counter : {thescore} </h1>
     <div style={{margin:"20px 50px"}}>
         <label> ADD </label>
