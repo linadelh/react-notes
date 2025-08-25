@@ -12,8 +12,12 @@ export default function Counter(){
             thescore -- ; 
             setscore(thescore);
         }else{
-            alert("enough MONSIEUR/MADAME");
+            alert("you can't sub more");
         }
+    }
+
+    function handleresetclick (){
+        setscore(0);
     }
 
 
@@ -28,6 +32,8 @@ export default function Counter(){
 
         <label> SUB </label>
         <button style={{cursor:"pointer"}} onClick={handlesubclick}> - </button>
+        <label> RESET </label>
+        <button style={{cursor:"pointer"}} onClick={handleresetclick}> R </button>
     </div>
 
     
