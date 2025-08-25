@@ -21,6 +21,7 @@ They are simple, reusable, and focus on the logic rather than the styling (CSS i
   2. To help new learners practice and understand the basics through simple, practical examples.
 
     
-  
+  ---
+  © 2025 Delhoum lina .
 
   
