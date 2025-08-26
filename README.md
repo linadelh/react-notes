@@ -4,7 +4,7 @@ They are simple, reusable, and focus on the logic part (**the css is up to you c
 
 
   ### HOW TO USE THEM 
- you will find all the components in the field **/src** just import each one of it in the app.js file 
+ you will find all the components in the field **/src** just import each one of them in the app.js file 
  
   
   ### why this repo 
