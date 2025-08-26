@@ -56,6 +56,8 @@ export default function ButtonColor (){
 
 
 return (
+    <>
     <button id="switch-color" style={{display:"flex" , justifyContent:"center" , margin:"250px auto" , padding:"30px" , cursor:"pointer" , transition:"0.7s" , backgroundColor: currentColor , color:"white"}} onClick={handlecolorclick}>{currentcontent}</button>
+    </>
 )
 }

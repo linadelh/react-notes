@@ -1,6 +1,6 @@
 
 import './App.css';
-import ButtonColor from './ButtonColor';
+import Numberofproduct from './Numberofproducts'
 
 
 
@@ -9,7 +9,7 @@ function App() {
 return (
   <div>
         
-   <ButtonColor/>
+   <Numberofproduct/>
 
   </div>
 )
