@@ -19,7 +19,7 @@ If age < 18 or age > 100, an error popup appears.
   -  Phone number validation:
 If the phone number doesn’t have exactly 10 digits, an error popup appears.
   Required fields:
-Name, phone number, and age must be filled in otherwise an error popup appears.
+Name, phone number, and age must be filled in otherwise you can not submit anything
    -  Success:
 If everything is valid a green success popup appears.
 
