@@ -1,11 +1,18 @@
 
 
-export default function PopUp(){
+export default function PopUp({isVisible , content , id }){
+
+  if(isVisible){
     return (
         <div id="popup">
-          <div id ="popup-content">
-             <h1>it's well submitted</h1>
+          <div id = {id} >
+             <h1>{content}</h1>
           </div>
         </div>
     )
+  }else{
+    return (
+      <></>
+    )
+  }
 }

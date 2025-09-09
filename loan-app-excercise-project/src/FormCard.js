@@ -6,24 +6,62 @@ import PopUp from "./PopUp"
 export default function FormCard (){
 
     const [Inputs , setInputs] = useState({name: "" , age:"" , phonenumber:"" , select:"" , employee:false});
+    
 
 
-    function handleclick (){
-        alert("hi");
-    }
+     const isDesabled = Inputs.name === "" || Inputs.age === "" || Inputs.phonenumber ===""
+     
 
-    const btndisable = Inputs.name ==="" || Inputs.age ==="" || Inputs.phonenumber ===""
+     const [isVisible , setvisibility] = useState(false);
+     const [content , setContent ] = useState("");
+     const [id , setId ] = useState("popup-content");
 
-    let btndisablestyle = "" ;
 
-    if (btndisable){
-       btndisablestyle = "btn-not"
-    }
+
+
+     let desabledclass = ""
+
+     if(isDesabled){
+        desabledclass = "" ; 
+     }else{
+        desabledclass = "disabled" 
+     }
+
+
+     function handleclick (){
+
+
+        if( Inputs.phonenumber.length !== 10 && (Inputs.age < 18 || Inputs.age > 100)){
+             setvisibility(true);
+            setContent("THE NUMBER MUST CONTAINS 10 DIGITS ONLY AND THE AGE MUST BE BETWEEN 18 AND 100 ");
+            setId("error");
+        } else 
+       
+        if(Inputs.phonenumber.length !== 10){
+            setvisibility(true);
+            setContent("THE NUMBER MUST CONTAINS 10 DIGITS ONLY ");
+            setId("error");
+        }else if(Inputs.age < 18 || Inputs.age > 100){
+            setvisibility(true);
+            setContent(" AGE INVALID , PLEASE ENTER AN AGE BETWEEN 18 AND 100 ");
+            setId("error");
+        } 
+        else {
+            setvisibility(true);
+            setContent(" THE FORM IS WELL SUBMITTED ");
+            setId("correct");
+        }
+        
+     }
+
+    
 
     
     return (
         <div className="formCard">
-         <form>
+         <form onSubmit={(e)=>{
+            e.preventDefault();
+         }}>
             <h1>Requesting a Loan</h1>
             <hr></hr>
 
@@ -45,7 +83,7 @@ export default function FormCard (){
             }}/>
             
             
-
+            
              
             <br></br>
 
@@ -82,11 +120,20 @@ export default function FormCard (){
             </select>
 
             <br></br>
-            <button className= {btndisablestyle} disabled = {btndisable} onClick={handleclick}>SUBMIT</button>
+            
 
            
+
+
+
+
+          <button className={desabledclass} disabled = {isDesabled} onClick={handleclick}>SUBMIT</button>
+
+     
+           
             </form>
-            {/* <PopUp/> */}
+        
+            <PopUp isVisible={isVisible} content={content} id={id}/>
         </div>
     )
 }
