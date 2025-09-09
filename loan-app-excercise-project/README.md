@@ -1,15 +1,16 @@
 # lOAN APP EXCERCISE PROJECT 
----
+
 
 ## HOW TO RUN 
 
 1. Download this folder **loan-app-excercise-project**.  
 2. Open it in **VS Code**.  
-3. In the terminal, run:  
+3. In the terminal, run:
+   
    ```bash
    npm run start
    
- A simple form will appear in your browser — fill it to test.
+ A simple form will appear in your browser fill it to test.
 
 ## Features
 
