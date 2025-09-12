@@ -13,5 +13,6 @@ It’s basically a draft (brouillon) where I drop simple components and mini exe
  - To document my progress as I learn React.
  - To maybe help other beginners who just want simple, raw examples.
 
+---
   
-   **⚠️ Nothing fancy here it’s more of a learning draft that I can revisit when needed.*
+  *⚠️ Nothing fancy here it’s more of a learning draft that I can revisit when needed.*
