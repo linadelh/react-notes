@@ -60,9 +60,10 @@ ul {
    
 }
 
-#click {
-     position: absolute;
-     right: 23%;
+.click {
+  display: flex ;
+  position: absolute;
+  right: 23%;
 }
 
 ul li {
@@ -77,8 +78,40 @@ li {
    font-weight: 500;
    font-size: 20px;
    cursor: pointer;
+   display: flex;
+   justify-content: space-between;
 }
 
 .finished {
   text-decoration: line-through;
 }
+
+#edit-button{
+  background-color: azure;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.disclaimer{
+  width: 50%;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.disclaimer p {
+   margin-top: -20px;
+   text-align: center;
+}
+
+.disclaimer h3 {
+  text-align: center;
+}
+

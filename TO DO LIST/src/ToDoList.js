@@ -3,9 +3,9 @@ import { useState } from "react"
 
 let Index = 0 ; 
 export default function ToDoList (){
-
-
-
+    
+    const [mood , setmood] = useState("normal");
+    const [index , setIndex] = useState();
     const [Lists , setLists] = useState(
         [
             
@@ -24,22 +24,44 @@ export default function ToDoList (){
                     }>
                   ➡️  { e.task}  
                   </span>
-                <span id="click" onClick={()=>{handledeleteclick(e)}} style={{"cursor" : "pointer"}}>
+                {/* <span id="click" onClick={()=>{handledeleteclick(e)}} style={{"cursor" : "pointer"}}>
                       ❌​
-                </span>
+                </span> */}
+
+                 <div className="click">
+                     <button onClick={()=>{handleeditclick(e)}}>EDIT</button>
+                     <div onClick={()=> {handledeleteclick(e)}} style={{"cursor" : "pointer"}}>❌​</div>
+                 </div>
+              
                 </li>
         )
     })
 
     
 
-    function handleclick (){
+    function handleclick (e){
+
+         console.log(e);
          const Listsoftask = [...Lists] ;
          Index++ ; 
          const task = {id : Index, task : Input , finished : false } 
          Listsoftask.push(task);
          setLists(Listsoftask);
          setInputs("");
+         if(mood==="edit"){
+          setmood("normal");
+          console.log(index);  
+          const secondlist = [...Lists];
+          let temp = 0 ; 
+          secondlist.forEach((e)=>{
+            if(e.id === index){
+                secondlist[temp].task = Input ; 
+            }else{
+              temp++; 
+            }
+          })
+          setLists(secondlist);
+         }
     }
 
      function finishedTask (e){
@@ -79,9 +101,25 @@ export default function ToDoList (){
          console.log(Lists);
     }
 
+    function handleeditclick(e){
+        setmood("edit");
+        console.log(e);
+        let object = e ;  
+        Lists.forEach((e=>{
+          if(e.id === object.id){
+            console.log("it is the one");
+            setInputs(object.task); 
+            setIndex(e.id);
+          }
+        }))
+    }
+
+    console.log(mood);
+    console.log(index);
+
 
   return (
-    <div>
+    <div className="container">
         <div className="ToDolist">
             <h1> TO DO LIST </h1>
             <div>
@@ -93,8 +131,13 @@ export default function ToDoList (){
             <input placeholder="add a new task" value={Input} onChange={(e)=>{
                 setInputs(e.target.value);
             }} ></input>
-            <button onClick={handleclick}>Add</button>
+            <button onClick={handleclick}>{mood === "normal" ? "ADD" : "UPDATE"}</button>
             </div>
+        </div>
+
+        <div className="disclaimer">
+         <h3>disclaimer</h3> 
+         <p>When you complete a task, simply click on it to mark it as done</p>
         </div>
     </div>
   )
