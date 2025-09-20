@@ -1,1 +1,1 @@
-**a simple to do list where you can add remove and mark as finished**
+**a simple to do list where you can add remove and edit and mark as finished**
