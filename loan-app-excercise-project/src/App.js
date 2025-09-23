@@ -3,6 +3,8 @@ import './App.css';
 import FormCard from './FormCard';
 
 function App() {
+
+  let title = "Loan project"
   return (
     <div className="App">
    

@@ -2,6 +2,8 @@
 
 import {useState } from "react"
 import PopUp from "./PopUp"
+import Component from "./Component";
+import { loanInputContex } from "./contexts/LoanformInput";
 
 export default function FormCard (){
 
@@ -29,8 +31,6 @@ export default function FormCard (){
 
 
      function handleclick (){
-
-
         if( Inputs.phonenumber.length !== 10 && (Inputs.age < 18 || Inputs.age > 100)){
              setvisibility(true);
             setContent("THE NUMBER MUST CONTAINS 10 DIGITS ONLY AND THE AGE MUST BE BETWEEN 18 AND 100 ");
@@ -51,10 +51,21 @@ export default function FormCard (){
             setContent(" THE FORM IS WELL SUBMITTED ");
             setId("correct");
         }
-        
      }
 
     
+
+    function Handlename (e){
+          setInputs({...Inputs , name : e}) ; 
+    }
+
+    function Handleage (e){
+          setInputs({...Inputs , age : e}) ; 
+    }
+
+    function Handlephonenumber (e){
+          setInputs({...Inputs , phonenumber : e}) ; 
+    }
 
     
     return (
@@ -65,36 +76,20 @@ export default function FormCard (){
             <h1>Requesting a Loan</h1>
             <hr></hr>
 
-            <label>Name</label>
-            <br></br>
-            <input type="text"  onChange={(e)=>{
-                setInputs( {...Inputs , name: e.target.value});
-            }}/>
-
+            <loanInputContex.Provider value={{value :Inputs.name , handle :Handlename , Inputlabel : "Name"} }>
+                 <Component/>
+            </loanInputContex.Provider>
+            
             <br></br>
 
-            <label>Phone number</label>
-            <br></br>
-            <input type="number" onChange={(e)=>{
-                const NewInput = {...Inputs};
-                NewInput.phonenumber = e.target.value ; 
-                setInputs(NewInput);
-                
-            }}/>
-            
-            
-            
-             
+             <loanInputContex.Provider value={{value :Inputs.phonenumber , handle :Handlephonenumber , Inputlabel : "Phone Number"} }>
+                 <Component/>
+            </loanInputContex.Provider>
             <br></br>
 
-            <label>Age</label>
-            <br></br>
-            <input type="number" onChange={(e)=>{
-        
-                const newInputs = {...Inputs};
-                newInputs.age = e.target.value ;  
-                setInputs(newInputs);
-            }}/>
+              <loanInputContex.Provider value={{value :Inputs.age , handle :Handleage , Inputlabel : "Age"} }>
+                 <Component/>
+            </loanInputContex.Provider>
 
             <p>Are you an employee?</p>
             <input  type="checkbox" checked= {Inputs.employee} onClick={()=>{
