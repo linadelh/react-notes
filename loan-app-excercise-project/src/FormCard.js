@@ -1,13 +1,18 @@
 
 
-import {useState } from "react"
+import {useContext, useState } from "react"
 import PopUp from "./PopUp"
 import Component from "./Component";
 import { loanInputContex } from "./contexts/LoanformInput";
+import { UserData } from "./contexts/UserContex";
 
 export default function FormCard (){
 
-    const [Inputs , setInputs] = useState({name: "" , age:"" , phonenumber:"" , select:"" , employee:false});
+
+
+    const user = useContext(UserData); 
+
+    const [Inputs , setInputs] = useState({name: user.UserName , age:"" , phonenumber:"" , select:"" , employee:false});
     
 
 
@@ -69,6 +74,9 @@ export default function FormCard (){
 
     
     return (
+
+        <div>
+            <h1 style={{color : "white"}}>WELCOME {user.UserName} PLEASE FILL THIS FORM </h1>
         <div className="formCard">
          <form onSubmit={(e)=>{
             e.preventDefault();
@@ -130,5 +138,6 @@ export default function FormCard (){
         
             <PopUp isVisible={isVisible} content={content} id={id}/>
         </div>
+    </div>
     )
 }
