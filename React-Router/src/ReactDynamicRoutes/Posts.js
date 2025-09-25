@@ -1,31 +1,15 @@
 
 import { Link } from "react-router-dom"
-
-
-let posts = [
-    {
-        id : 1 ,
-        title : "HARRY POTTER" ,
-        paragraph : "fantasy movie kskssksksksks" 
-    },
-    {
-        id : 2 ,
-        title : "MARVEL SERIES" ,
-        paragraph : "fantasy movie kskssksksksks " 
-    },
-    {
-        id : 3 ,
-        title : "BACK TO THE FUTURE" ,
-        paragraph : "SCIENCE FICTION movie kskssksksksks" 
-    }
-
-]
+import { postcontex } from "../Contex/PostsContex" 
+import { useContext } from "react"
 
 export default function Posts (){
 
+    const posts = useContext(postcontex) ;
+
     let postsList = posts.map((post)=>{
         return (
-         <Link to="/PostsDetails">
+         <Link to={`/PostsDetails/${post.id}`} key= {post.id}>
             <div style={{backgroundColor : "pink" , margin :"10px" , padding :"10px"}}>
                 <h1>{post.title}</h1>
             </div>
@@ -38,6 +22,6 @@ export default function Posts (){
         {postsList}
         
         
-        </div>
+        </div>  
     )
 }
