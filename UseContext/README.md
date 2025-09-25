@@ -1,25 +1,49 @@
-# lOAN APP EXCERCISE PROJECT 
+### USE CONTEXT 
+
+1. What is Context in React?
+
+Context is like a shared box of data.
+You put the data inside the box (using a *Provider*).
+Any component inside the tree can open the box and take the data (using useContext).
+This way, you don’t need to pass props through many components that don’t use them.
+
+2. When should you use useContext?
+
+You use it when:
+A value is needed by many components.
+Passing props becomes too long or too complicated.
+
+Example:
+You have App → A → B → C → D
+If only D needs the data, without context you would pass it through A, B, C.
+With context, you put the data in a Provider at the top, and D can take it directly.
+
+3. Where can you use useContext?
+Only inside a function component.
+The component must be inside the Provider.
+If it is outside, it will not find the data.
+
+4. My code as an example
+
+I created a **context SizeImage**
+In contex.js
+in app i wrapped everything with:
+
+<SizeImage.Provider value={ imageSize }>
+  <List />
+</SizeImage.Provider>
 
 
-## HOW TO RUN 
+Here i put the value imageSize inside the box.
+Later, in PlaceImage:
 
-1. Download this folder **loan-app-excercise-project**.  
-2. Open it in **VS Code**.  
-3. In the terminal, run:
-   
-   ```bash
-   npm run start
-   
- A simple form will appear in your browser fill it to test.
+function PlaceImage() {
+  const  imageSize  = useContext(SizeImage); // opening the box
+  return <img width={imageSize} height={imageSize} />;
+}
 
-## Features
+Here i open the box and get the value.
 
-  - Age validation:
-If age < 18 or age > 100, an error popup appears.
-  -  Phone number validation:
-If the phone number doesn’t have exactly 10 digits, an error popup appears.
-  Required fields:
-Name, phone number, and age must be filled in otherwise you can not submit anything
-   -  Success:
-If everything is valid a green success popup appears.
-
+ Think about it like this:
+Provider = put the data in the box.
+useContext = open the box where you need it.
