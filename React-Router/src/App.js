@@ -1,28 +1,24 @@
 
 
 import './App.css';
-import Loginpage from './LoginPage';
-import Signup from './SignUp';
-import { Routes , Route   } from 'react-router-dom';
-import Welcome from './WelcomeHome';
+import Posts from './ReactDynamicRoutes/Posts';
+import { Route , Routes } from 'react-router-dom';
+import PostsDetails from './ReactDynamicRoutes/PostsDetails';
 
 
 function App() {
   return (
-    <>
+    <div>
     
     
-
-    <Routes>
-      <Route path='/Login' element = {<Loginpage/>}/>
-      <Route path='/SignUp' element = {<Signup/>}/>
-      <Route path='/' element = {<Loginpage/>}/>
-      <Route path='/Welcome' element = {<Welcome/>}/>
-    </Routes>
-
+    
+     <Routes>
+      <Route path="/" element = {<Posts/>} />
+      <Route  path="/PostsDetails"  element ={<PostsDetails/>} /> 
+     </Routes>
    
         
-    </>
+    </div>
   )
 }
 
