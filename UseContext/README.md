@@ -14,7 +14,11 @@ A value is needed by many components.
 Passing props becomes too long or too complicated.
 
 Example:
-You have App → A → B → C → D
+You have 
+
+App → A → B → C → D
+
+
 If only D needs the data, without context you would pass it through A, B, C.
 With context, you put the data in a Provider at the top, and D can take it directly.
 
