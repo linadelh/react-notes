@@ -38,10 +38,11 @@ I created a **context SizeImage**
 In contex.js
 in app i wrapped everything with:
 
+```
 <SizeImage.Provider value={ imageSize }>
   <List />
 </SizeImage.Provider>
-
+```
 
 Here i put the value imageSize inside the box.
 Later, in PlaceImage:
