@@ -47,10 +47,12 @@ in app i wrapped everything with:
 Here i put the value imageSize inside the box.
 Later, in PlaceImage:
 
+```
 function PlaceImage() {
   const  imageSize  = useContext(SizeImage); // opening the box
   return <img width={imageSize} height={imageSize} />;
 }
+```
 
 Here i open the box and get the value.
 
@@ -58,3 +60,73 @@ Here i open the box and get the value.
  Think about it like this:
 Provider = put the data in the box.
 useContext = open the box where you need it.
+
+
+ ### MORE EXAMPLES : 
+
+
+ ## Example 1: Theme (Light / Dark)
+
+**Goal: Change button style depending on the theme**
+
+```
+import { createContext, useContext } from "react";
+
+// 1. Create the context
+const ThemeContext = createContext();
+
+function App() {
+  // 2. Put the value inside Provider
+  return (
+    <ThemeContext.Provider value="dark">
+      <Toolbar />
+    </ThemeContext.Provider>
+  );
+}
+
+function Toolbar() {
+  return (
+    <div>
+      <Button />
+    </div>
+  );
+}
+
+function Button() {
+  // 3. Use the context where you need it
+  const theme = useContext(ThemeContext);
+  return <button>{theme === "dark" ? "Dark Button" : "Light Button"}</button>;
+}
+
+```
+✔ The Button does not need props. It can read the theme directly from the context.
+
+## Example 2: User Login Information
+
+Goal: Show current user info without sending props everywhere.
+
+
+```
+import { createContext, useContext } from "react";
+
+// 1. Create the context
+const UserContext = createContext();
+
+function App() {
+  const user = { name: "Lina", role: "student" };
+
+  // 2. Provide the user data
+  return (
+    <UserContext.Provider value={user}>
+      <Profile />
+    </UserContext.Provider>
+  );
+}
+
+function Profile() {
+  // 3. Use the user data inside any child
+  const user = useContext(UserContext);
+  return <h2>Welcome, {user.name}! You are a {user.role}.</h2>;
+}
+```
+✔ The Profile can use the user object directly from context.
