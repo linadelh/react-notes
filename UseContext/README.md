@@ -1,13 +1,15 @@
 ### USE CONTEXT 
 
-1. What is Context in React?
+## 1. What is Context in React?
+---
 
 Context is like a shared box of data.
 You put the data inside the box (using a *Provider*).
 Any component inside the tree can open the box and take the data (using useContext).
 This way, you don’t need to pass props through many components that don’t use them.
 
-2. When should you use useContext?
+## 2. When should you use useContext?
+---
 
 You use it when:
 A value is needed by many components.
@@ -22,12 +24,15 @@ App → A → B → C → D
 If only D needs the data, without context you would pass it through A, B, C.
 With context, you put the data in a Provider at the top, and D can take it directly.
 
-3. Where can you use useContext?
+## 3. Where can you use useContext?
+---
+
 Only inside a function component.
 The component must be inside the Provider.
 If it is outside, it will not find the data.
 
-4. My code as an example
+## 4. My code as an example
+---
 
 I created a **context SizeImage**
 In contex.js
