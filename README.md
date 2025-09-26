@@ -7,6 +7,7 @@ It’s basically here where I drop simple components and mini exercises while pr
  - Basic reusable React components
  -  Mini exercises to practice logic
  -  Very simple styling
+ -  courses for some concept ( react DOM , react context...)  trying to make them as simple as possible so they’re easier to remember and understand 
 
 ## why this repo 
  - To help me remember how to implement core concepts.
