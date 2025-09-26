@@ -1,7 +1,7 @@
 ### My React Learning Journey
 
 This repo is part of my React learning journey.
-It’s basically a draft (brouillon) where I drop simple components and mini exercises while practicing the fundamentals.
+It’s basically here where I drop simple components and mini exercises while practicing the fundamentals.
 
 ## What’s inside 
  - Basic reusable React components
